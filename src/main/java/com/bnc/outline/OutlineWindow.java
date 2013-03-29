@@ -38,15 +38,15 @@ public class OutlineWindow extends JPanel
         Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
 
         if (editor != null) {
-            displayDocument(g, editor.getDocument());
+            displayDocument(g, editor.getDocument(), editor.getColorsScheme());
         }
     }
 
-    private void displayDocument(Graphics g, Document document)
+    private void displayDocument(Graphics g, Document document, EditorColorsScheme scheme)
     {
-        g.setColor(new Color(0xffffff));
+        g.setColor(scheme.getDefaultBackground());
         g.fillRect(0, 0, getWidth(), getHeight());
-        g.setColor(new Color(0x000000));
+        g.setColor(scheme.getDefaultForeground());
 
         for (int lineNumber = 0; lineNumber < document.getLineCount(); lineNumber++) {
             String line = document.getText(new TextRange(
