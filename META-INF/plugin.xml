@@ -30,6 +30,9 @@
 
   <project-components>
     <!-- Add your project components here -->
+    <component>
+      <implementation-class>com.bnc.outline.OutlinePlugin</implementation-class>
+    </component>
   </project-components>
 
   <actions>
@@ -38,6 +41,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-    <toolWindow id="OutlineToolWindow" anchor="right" factoryClass="com.bnc.outline.OutlineToolWindowFactory"/>
+    <!--toolWindow id="OutlineToolWindow" anchor="right" factoryClass="com.bnc.outline.OutlineToolWindowFactory"/>
+    <projectService serviceInterface="com.bnc.outline.OutlineToolWindowContent"
+                    serviceImplementation="com.bnc.outline.OutlineToolWindowContent"/-->
   </extensions>
 </idea-plugin>
